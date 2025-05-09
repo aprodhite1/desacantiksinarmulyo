@@ -1,0 +1,145 @@
+body {
+  color: #333333;
+  background-color: #f9f9f9;
+}
+
+/* Header Styles */
+.kop {
+  width: 1330px;
+  float: left;
+  margin-bottom: 4px;
+  background-color: #d2b356;
+  padding: 10px 0;
+  border-radius: 4px;
+}
+
+.kotak1,
+.kotak3 {
+  height: 60px;
+  border: 2px solid #d2b356;
+  background-color: #f0e6c3;
+}
+
+.kotak1 {
+  width: 150px;
+  float: left;
+}
+
+.kotak3 {
+  width: 150px;
+  float: right;
+  text-align: center;
+}
+
+/* Form Elements */
+input,
+textarea,
+select {
+  border-radius: 4px;
+  padding: 8px;
+  outline: 0;
+  border: solid 1px #d2b356;
+  box-shadow: 0 2px 4px rgba(210, 179, 86, 0.2);
+  background: #ffffff;
+  width: 300px;
+  color: #333333;
+  font-family: "Times New Roman", serif;
+  font-size: 12pt;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #b89b3f;
+  box-shadow: 0 2px 8px rgba(210, 179, 86, 0.3);
+}
+
+/* Table Styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+th {
+  background-color: #d2b356;
+  color: #ffffff;
+  text-align: center;
+  padding: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  color: #333333;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+tr:hover {
+  background-color: #f0e6c3;
+}
+
+/* Buttons and Links */
+a {
+  color: #d2b356;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #b89b3f;
+  text-decoration: underline;
+}
+
+button,
+.button {
+  background-color: #d2b356;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover,
+.button:hover {
+  background-color: #b89b3f;
+}
+
+/* Additional Elements */
+pre {
+  text-align: center;
+  font-family: "Times New Roman", serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.logo1,
+.logo2,
+.logo3 {
+  max-height: 50px;
+  vertical-align: middle;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .kop {
+    width: 100%;
+  }
+
+  input,
+  textarea,
+  select {
+    width: 100%;
+  }
+}

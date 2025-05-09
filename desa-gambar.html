@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desa Sinar Mulyo - Desa dalam Gambar</title>
+
+    <!-- Main CSS Files -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/namari-color.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+
+    <style>
+      tab-menu {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0;
+        position: relative;
+      }
+
+      .tab-menu:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 80%;
+        height: 2px;
+        background: #f0f0f0;
+        z-index: 1;
+      }
+
+      .tab-btn {
+        padding: 15px 40px;
+        margin: 0 5px;
+        background: transparent;
+        color: #555;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        transition: all 0.4s ease;
+        z-index: 2;
+        border-radius: 5px 5px 0 0;
+      }
+
+      .tab-btn:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: #e74c3c;
+        transition: all 0.3s ease;
+        z-index: -1;
+      }
+
+      .tab-btn.active {
+        color: white;
+        transform: translateY(-5px);
+      }
+
+      .tab-btn.active:before {
+        height: 100%;
+      }
+
+      .tab-btn:hover:not(.active) {
+        color: #e74c3c;
+      }
+
+      /* Style Konten Tab */
+      .tab-content {
+        display: none;
+        animation: fadeIn 0.6s ease-out;
+        padding: 30px 0;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Style Gallery Grid */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+        padding: 20px 0;
+      }
+
+      .gallery-item {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      }
+
+      .gallery-item:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.7) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .gallery-item:hover:before {
+        opacity: 1;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .gallery-caption {
+        padding: 25px;
+        position: relative;
+        background: white;
+      }
+
+      .gallery-caption h3 {
+        color: #2c3e50;
+        font-size: 20px;
+        margin-bottom: 10px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .gallery-caption h3:after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: #e74c3c;
+        transition: width 0.3s ease;
+      }
+
+      .gallery-item:hover .gallery-caption h3:after {
+        width: 80px;
+      }
+
+      .gallery-caption p {
+        color: #7f8c8d;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      /* Efek hover tambahan */
+      .gallery-item .hover-content {
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        color: white;
+        transition: bottom 0.4s ease;
+        z-index: 3;
+      }
+
+      .gallery-item:hover .hover-content {
+        bottom: 0;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .tab-btn {
+          padding: 12px 20px;
+          font-size: 14px;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <script>
+      // Fallback jika JavaScript disabled
+      document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+          document.getElementById("preloader").classList.add("hide");
+        }, 3000);
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="status" class="la-ball-triangle-path">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!--End of Preloader-->
+
+    <div class="page-border" data-wow-duration="0.7s" data-wow-delay="0.2s">
+      <div
+        class="top-border wow fadeInDown animated"
+        style="visibility: visible; animation-name: fadeInDown"
+      ></div>
+      <div
+        class="right-border wow fadeInRight animated"
+        style="visibility: visible; animation-name: fadeInRight"
+      ></div>
+      <div
+        class="bottom-border wow fadeInUp animated"
+        style="visibility: visible; animation-name: fadeInUp"
+      ></div>
+      <div
+        class="left-border wow fadeInLeft animated"
+        style="visibility: visible; animation-name: fadeInLeft"
+      ></div>
+    </div>
+
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="banner" class="scrollto clearfix" data-enllax-ratio=".5">
+        <div id="header" class="nav-collapse">
+          <div class="row clearfix">
+            <div class="col-1">
+              <!--Logo-->
+              <div id="logo">
+                <!--Logo that is shown on the banner-->
+                <img
+                  src="images/logo.png"
+                  id="banner-logo"
+                  alt="Landing Page"
+                />
+                <!--End of Banner Logo-->
+
+                <!--The Logo that is shown on the sticky Navigation Bar-->
+                <img
+                  src="images/logo-2.png"
+                  id="navigation-logo"
+                  alt="Landing Page"
+                />
+                <!--End of Navigation Logo-->
+              </div>
+              <!--End of Logo-->
+
+              <aside>
+                <a href="login.php" class="admin">KELOLA DATA</a>
+              </aside>
+
+              <!--Main Navigation-->
+              <nav id="nav-main">
+                <ul>
+                  <li>
+                    <a href="#banner">Beranda</a>
+                  </li>
+                  <li>
+                    <a href="#testimonials">Struktur</a>
+                  </li>
+                  <li>
+                    <a href="#about">Tentang</a>
+                  </li>
+                  <li>
+                    <a href="#gallery">Gallery</a>
+                  </li>
+
+                  <li>
+                    <a href="#data">Data ᐁ</a>
+                    <!-- Dropdown Menu -->
+                    <ul>
+                      <li><a href="#desa-angka">Desa dalam Angka</a></li>
+                      <li><a href="#desa-gambar">Desa dalam Gambar</a></li>
+                      <li><a href="#desa-peta">Desa dalam Peta</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#Buku">Buku Statistik Desa</a>
+                  </li>
+                </ul>
+              </nav>
+              <!--End of Main Navigation-->
+
+              <div id="nav-trigger"><span></span></div>
+              <nav id="nav-mobile"></nav>
+            </div>
+          </div>
+        </div>
+        <!--End of Header-->
+
+        <!--Banner Content-->
+        <div id="banner-content" class="row clearfix">
+          <div class="col-38">
+            <div class="section-heading">
+              <h3 style="color: white">Selamat datang di</h3>
+              <h2 style="color: white">
+                <b>DESA LUMBUNG PANGAN OKU SELATAN, </b>
+              </h2>
+              <h1 style="color: white"><b>DESA SINAR MULYO</b></h1>
+            </div>
+          </div>
+        </div>
+        <!--End of Row-->
+      </header>
+
+      <!-- Main Content -->
+      <main id="content">
+        <!-- Tab Navigation -->
+        <div class="tab-menu">
+          <button class="tab-btn active" onclick="openTab('infografis')">
+            <i class="fa fa-chart-pie"></i> INFOGRAFIS
+          </button>
+          <button class="tab-btn" onclick="openTab('statistik')">
+            <i class="fa fa-chart-bar"></i> STATISTIK DATA
+          </button>
+        </div>
+
+        <!-- Infografis Tab -->
+        <section id="infografis" class="tab-content active scrollto">
+          <div class="row clearfix">
+            <div class="section-heading">
+              <h2 class="section-title">Infografis Desa Sinar Mulyo</h2>
+              <p class="section-subtitle">
+                Informasi visual tentang berbagai aspek desa
+              </p>
+            </div>
+
+            <div class="gallery-grid">
+              <!-- Item 1 -->
+              <div class="gallery-item wow fadeIn" data-wow-delay="0.3s">
+                <img
+                  src="images/infografis/ekonomi.jpg"
+                  alt="Struktur Penduduk"
+                />
+                <div class="gallery-caption">
+                  <h3>Struktur Penduduk</h3>
+                  <p>Komposisi penduduk berdasarkan usia dan jenis kelamin</p>
+                </div>
+                <div class="hover-content">
+                  <a href="#" class="button">Lihat Detail</a>
+                  <a
+                    href="images/infografis/ekonomi.jpg"
+                    download
+                    class="button"
+                    >Download</a
+                  >
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="gallery-item wow fadeIn" data-wow-delay="0.3s">
+                <img
+                  src="images/infografis/ekonomi.jpg"
+                  alt="Struktur Penduduk"
+                />
+                <div class="gallery-caption">
+                  <h3>Struktur Penduduk</h3>
+                  <p>Komposisi penduduk berdasarkan usia dan jenis kelamin</p>
+                </div>
+                <div class="hover-content">
+                  <a href="#" class="button">Lihat Detail</a>
+                  <a
+                    href="images/infografis/ekonomi.jpg"
+                    download
+                    class="button"
+                    >Download</a
+                  >
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="gallery-item wow fadeIn" data-wow-delay="0.3s">
+                <img
+                  src="images/infografis/ekonomi.jpg"
+                  alt="Struktur Penduduk"
+                />
+                <div class="gallery-caption">
+                  <h3>Struktur Penduduk</h3>
+                  <p>Komposisi penduduk berdasarkan usia dan jenis kelamin</p>
+                </div>
+                <div class="hover-content">
+                  <a href="#" class="button">Lihat Detail</a>
+                  <a
+                    href="images/infografis/ekonomi.jpg"
+                    download
+                    class="button"
+                    >Download</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Statistik Tab -->
+        <section id="statistik" class="tab-content scrollto">
+          <div class="row clearfix">
+            <div class="section-heading">
+              <h2 class="section-title">Statistik Data Desa</h2>
+              <p class="section-subtitle">Data statistik dalam bentuk visual</p>
+            </div>
+
+            <div class="gallery-grid">
+              <!-- Item 1 -->
+              <div class="gallery-item wow fadeIn" data-wow-delay="0.3s">
+                <img
+                  src="images/statistik/pendidikan-chart.JPG"
+                  alt="Pertumbuhan Penduduk"
+                />
+                <div class="gallery-caption">
+                  <h3>Pertumbuhan Penduduk</h3>
+                  <p>Perkembangan jumlah penduduk 5 tahun terakhir</p>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="gallery-item wow fadeIn" data-wow-delay="0.5s">
+                <img
+                  src="images/statistik/pendidikan-chart.JPG"
+                  alt="Hasil Panen"
+                />
+                <div class="gallery-caption">
+                  <h3>Hasil Panen</h3>
+                  <p>Perbandingan produksi pertanian tiap musim</p>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="gallery-item wow fadeIn" data-wow-delay="0.7s">
+                <img
+                  src="images/statistik/pendidikan-chart.JPG"
+                  alt="Pertumbuhan Ekonomi"
+                />
+                <div class="gallery-caption">
+                  <h3>Pertumbuhan Ekonomi</h3>
+                  <p>Perkembangan PDRB Desa 3 tahun terakhir</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!--Footer-->
+      <footer id="landing-footer" class="clearfix">
+        <div class="row clearfix">
+          <p id="copyright" class="col-2">
+            © 2023 Desa Sinar Mulyo - OKU Selatan
+          </p>
+          <ul class="col-2 social-icons">
+            <li>
+              <a target="_blank" title="Facebook" href="#">
+                <i class="fa fa-facebook fa-1x"></i><span>Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a target="_blank" title="Instagram" href="#">
+                <i class="fa fa-instagram fa-1x"></i><span>Instagram</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Include JavaScript resources -->
+    <script src="js/jquery.1.8.3.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery.enllax.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.stickyNavbar.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/images-loaded.min.js"></script>
+
+    <script>
+      // Initialize WOW.js
+      new WOW().init();
+
+      function openTab(tabName) {
+        // Hide all tab content
+        $(".tab-content").removeClass("active");
+
+        // Deactivate all tab buttons
+        $(".tab-btn").removeClass("active");
+
+        // Show selected tab
+        $("#" + tabName).addClass("active");
+        $(event.currentTarget).addClass("active");
+
+        // Scroll to the tab content
+        $("html, body").animate(
+          {
+            scrollTop: $("#" + tabName).offset().top - 100,
+          },
+          500
+        );
+      }
+
+      // Lightbox effect for images
+      $(document).ready(function () {
+        $(".gallery-item img").click(function () {
+          window.open($(this).attr("src"), "_blank");
+        });
+      });
+    </script>
+    <script>
+      // Script utama
+      $(window).on("load", function () {
+        // Pastikan semua resource sudah terload
+        $("#preloader").addClass("hide");
+        $("#wrapper").fadeIn();
+
+        // Fallback double check
+        setTimeout(function () {
+          if ($("#preloader").is(":visible")) {
+            $("#preloader").remove();
+            $("#wrapper").show();
+          }
+        }, 5000);
+      });
+    </script>
+  </body>
+</html>

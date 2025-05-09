@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Data Desa Sinar Mulyo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/logo.ico" title="Favicon" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/namari-color.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      /* Custom Styles for Data Desa Page - Focused on Angka */
+      .data-desa-section {
+        padding: 60px 0;
+      }
+
+      .data-card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin: 0 auto 40px;
+        overflow: hidden;
+        max-width: 1200px;
+      }
+
+      .data-header {
+        background: #d2b356;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .data-content {
+        padding: 30px;
+      }
+
+      .stat-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+
+      .stat-table th {
+        background-color: #d2b356;
+        color: white;
+        padding: 12px;
+        text-align: center;
+      }
+
+      .stat-table td {
+        padding: 10px 12px;
+        border-bottom: 1px solid #e0e0e0;
+        text-align: center;
+      }
+
+      .stat-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      .stat-table tr:hover {
+        background-color: #f1f1f1;
+      }
+
+      .stat-table .category {
+        font-weight: bold;
+        color: #000000;
+        text-align: left;
+      }
+
+      .year-header {
+        background-color: #e6f2ff;
+        font-weight: bold;
+      }
+
+      .download-btn {
+        display: inline-block;
+        background: #d2b356;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+
+      .download-btn:hover {
+        background: #c4a64c;
+      }
+
+      /* Added to match index.html styling */
+      .section-heading {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .section-title {
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .section-subtitle {
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 30px;
+      }
+
+      .table-container {
+        overflow-x: auto;
+      }
+
+      .trend-up {
+        color: #4caf50;
+      }
+
+      .trend-down {
+        color: #f44336;
+      }
+
+      .trend-neutral {
+        color: #ffc107;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="status" class="la-ball-triangle-path">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!--End of Preloader-->
+
+    <div class="page-border" data-wow-duration="0.7s" data-wow-delay="0.2s">
+      <div class="top-border wow fadeInDown animated"></div>
+      <div class="right-border wow fadeInRight animated"></div>
+      <div class="bottom-border wow fadeInUp animated"></div>
+      <div class="left-border wow fadeInLeft animated"></div>
+    </div>
+
+    <div id="wrapper">
+      <header id="banner" class="scrollto clearfix" data-enllax-ratio=".5">
+        <div id="header" class="nav-collapse">
+          <div class="row clearfix">
+            <div class="col-1">
+              <!--Logo-->
+              <div id="logo">
+                <!--Logo that is shown on the banner-->
+                <img
+                  src="images/logo.png"
+                  id="banner-logo"
+                  alt="Landing Page"
+                />
+                <!--End of Banner Logo-->
+
+                <!--The Logo that is shown on the sticky Navigation Bar-->
+                <img
+                  src="images/logo-2.png"
+                  id="navigation-logo"
+                  alt="Landing Page"
+                />
+                <!--End of Navigation Logo-->
+              </div>
+              <!--End of Logo-->
+
+              <aside>
+                <a href="login.php" class="admin">KELOLA DATA</a>
+              </aside>
+
+              <!--Main Navigation-->
+              <nav id="nav-main">
+                <ul>
+                  <li>
+                    <a href="index.html">Beranda</a>
+                  </li>
+                  <li>
+                    <a href="/desacantiksinarmulyo/data-desa.html">Data Desa</a>
+                  </li>
+                  <li>
+                    <a href="/desacantiksinarmulyo/Infografis.html"
+                      >Inforgrafis</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/desacantiksinarmulyo/berita.html">Berita</a>
+                  </li>
+                  <li>
+                    <a href="/desacantiksinarmulyo/Peta.html">Peta</a>
+                  </li>
+                  <li>
+                    <a href="/desacantiksinarmulyo/index.html#Buku"
+                      >Buku Statistik Desa</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+              <!--End of Main Navigation-->
+
+              <div id="nav-trigger"><span></span></div>
+              <nav id="nav-mobile"></nav>
+            </div>
+          </div>
+        </div>
+        <!--End of Header-->
+      </header>
+
+      <!-- Main Content -->
+      <main id="content">
+        <section id="data-desa" class="data-desa-section scrollto clearfix">
+          <div class="row clearfix">
+            <div class="col-1">
+              <div class="section-heading wow fadeInUp" data-wow-delay="0.2s">
+                <h2 class="section-title">DATA DESA SINAR MULYO</h2>
+                <p class="section-subtitle">
+                  Statistik kuantitatif Desa Sinar Mulyo per tahun
+                </p>
+              </div>
+
+              <div class="data-card wow fadeInUp" data-wow-delay="0.3s">
+                <div class="data-header">
+                  <h3>DESA DALAM ANGKA</h3>
+                  <p>Data Statistik Tahunan Desa Sinar Mulyo</p>
+                </div>
+                <div class="data-content">
+                  <p>
+                    Berikut adalah data statistik Desa Sinar Mulyo dari tahun
+                    2023 hingga 2025:
+                  </p>
+
+                  <!-- Pendidikan Table -->
+                  <h4 class="wow fadeInUp" data-wow-delay="0.4s">Pendidikan</h4>
+                  <div class="table-container">
+                    <table
+                      class="stat-table wow fadeInUp"
+                      data-wow-delay="0.5s"
+                    >
+                      <thead>
+                        <tr>
+                          <th rowspan="2">Indikator</th>
+                          <th colspan="3">Tahun</th>
+                        </tr>
+                        <tr>
+                          <th>2023</th>
+                          <th>2024</th>
+                          <th>2025</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="category">SD/MI</td>
+                          <td>2</td>
+                          <td>2</td>
+                          <td>3 <span class="trend-up">↑</span></td>
+                        </tr>
+                        <tr>
+                          <td class="category">SMP/MTs</td>
+                          <td>1</td>
+                          <td>1</td>
+                          <td>1</td>
+                        </tr>
+                        <tr>
+                          <td class="category">SMA/MA</td>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
+                        </tr>
+                        <tr>
+                          <td class="category">Perguruan Tinggi</td>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- Kependudukan Table -->
+                  <h4 class="wow fadeInUp" data-wow-delay="0.6s">
+                    Kependudukan
+                  </h4>
+                  <div class="table-container">
+                    <table
+                      class="stat-table wow fadeInUp"
+                      data-wow-delay="0.7s"
+                    >
+                      <thead>
+                        <tr>
+                          <th rowspan="2">Indikator</th>
+                          <th colspan="3">Tahun</th>
+                        </tr>
+                        <tr>
+                          <th>2023</th>
+                          <th>2024</th>
+                          <th>2025</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="category">Jumlah Penduduk</td>
+                          <td>2.100</td>
+                          <td>2.150</td>
+                          <td>2.179 <span class="trend-up">↑</span></td>
+                        </tr>
+                        <tr>
+                          <td class="category">Laki-laki</td>
+                          <td>1.080</td>
+                          <td>1.110</td>
+                          <td>1.131 <span class="trend-up">↑</span></td>
+                        </tr>
+                        <tr>
+                          <td class="category">Perempuan</td>
+                          <td>1.020</td>
+                          <td>1.040</td>
+                          <td>1.048 <span class="trend-up">↑</span></td>
+                        </tr>
+                        <tr>
+                          <td class="category">Kepadatan (jiwa/km²)</td>
+                          <td>600</td>
+                          <td>610</td>
+                          <td>622,57 <span class="trend-up">↑</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- Kesehatan Table -->
+                  <h4 class="wow fadeInUp" data-wow-delay="0.8s">Kesehatan</h4>
+                  <div class="table-container">
+                    <table
+                      class="stat-table wow fadeInUp"
+                      data-wow-delay="0.9s"
+                    >
+                      <thead>
+                        <tr>
+                          <th rowspan="2">Indikator</th>
+                          <th colspan="3">Tahun</th>
+                        </tr>
+                        <tr>
+                          <th>2023</th>
+                          <th>2024</th>
+                          <th>2025</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="category">Posyandu</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>3</td>
+                        </tr>
+                        <tr>
+                          <td class="category">Puskesmas</td>
+                          <td>1</td>
+                          <td>1</td>
+                          <td>1</td>
+                        </tr>
+                        <tr>
+                          <td class="category">Balita Gizi Buruk</td>
+                          <td>5</td>
+                          <td>3</td>
+                          <td>2 <span class="trend-down">↓</span></td>
+                        </tr>
+                        <tr>
+                          <td class="category">Stunting</td>
+                          <td>15%</td>
+                          <td>12%</td>
+                          <td>10% <span class="trend-down">↓</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- Pertanian Table -->
+                  <h4 class="wow fadeInUp" data-wow-delay="1.0s">Pertanian</h4>
+                  <div class="table-container">
+                    <table
+                      class="stat-table wow fadeInUp"
+                      data-wow-delay="1.1s"
+                    >
+                      <thead>
+                        <tr>
+                          <th rowspan="2">Indikator</th>
+                          <th colspan="3">Tahun</th>
+                        </tr>
+                        <tr>
+                          <th>2023</th>
+                          <th>2024</th>
+                          <th>2025</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="category">Luas Sawah(ha)</td>
+                          <td>150</td>
+                          <td>155</td>
+                          <td>160 <span class="trend-up">↑</span></td>
+                        </tr>
+                        <tr>
+                          <td class="category">Produksi Padi (ton)</td>
+                          <td>750</td>
+                          <td>800</td>
+                          <td>850 <span class="trend-up">↑</span></td>
+                        </tr>
+                        <tr>
+                          <td class="category">Peternakan,(ekor)</td>
+                          <td>500</td>
+                          <td>550</td>
+                          <td>600 <span class="trend-up">↑</span></td>
+                        </tr>
+                        <tr>
+                          <td class="category">Perkebunan(ha)</td>
+                          <td>50</td>
+                          <td>55</td>
+                          <td>60<span class="trend-up">↑</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="wow fadeInUp" data-wow-delay="1.2s">
+                    <a href="#" class="download-btn">
+                      <i class="fa fa-download"></i> Download Data Lengkap
+                      (Excel)
+                    </a>
+                    <a href="#" class="download-btn" style="margin-left: 10px">
+                      <i class="fa fa-file-pdf-o"></i> Versi PDF
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!--End Main Content Area-->
+
+      <!--Footer-->
+      <footer id="landing-footer" class="clearfix">
+        <div class="row clearfix">
+          <p id="copyright" class="col-2">
+            Made with love by
+            <a href="https://okuselatankab.bps.go.id/id">Tengku</a>
+          </p>
+
+          <!--Social Icons in Footer-->
+          <ul class="col-2 social-icons">
+            <li>
+              <a
+                target="_blank"
+                title="Facebook"
+                href="https://www.facebook.com/username"
+              >
+                <i class="fa fa-facebook fa-1x"></i><span>Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                title="Google+"
+                href="http://google.com/+username"
+              >
+                <i class="fa fa-google-plus fa-1x"></i><span>Google+</span>
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                title="Twitter"
+                href="http://www.twitter.com/username"
+              >
+                <i class="fa fa-twitter fa-1x"></i><span>Twitter</span>
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                title="Instagram"
+                href="http://www.instagram.com/username"
+              >
+                <i class="fa fa-instagram fa-1x"></i><span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a target="_blank" title="behance" href="http://www.behance.net">
+                <i class="fa fa-behance fa-1x"></i><span>Behance</span>
+              </a>
+            </li>
+          </ul>
+          <!--End of Social Icons in Footer-->
+        </div>
+      </footer>
+      <!--End of Footer-->
+    </div>
+
+    <!-- Include JavaScript resources -->
+    <script src="js/jquery.1.8.3.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/featherlight.min.js"></script>
+    <script src="js/featherlight.gallery.min.js"></script>
+    <script src="js/jquery.enllax.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.stickyNavbar.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/images-loaded.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script src="js/site.js"></script>
+
+    <script>
+      // Initialize WOW.js
+      new WOW().init();
+    </script>
+  </body>
+</html>

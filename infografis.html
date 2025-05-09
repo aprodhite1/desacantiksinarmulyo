@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title>Infografis Desa Sinar Mulyo</title>
+    <meta name="keywords" content="infografis desa, sinar mulyo, data visual" />
+    <meta
+      name="description"
+      content="Infografis dan data visual Desa Sinar Mulyo"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/logo.ico" title="Favicon" />
+
+    <!-- Main CSS Files -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/namari-color.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+
+    <!-- Google Webfonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <style>
+      /* Infographic Section Styling */
+      .infographic-section {
+        padding: 60px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 30px;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background: #4caf50;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .section-subtitle {
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto 40px;
+        text-align: center;
+      }
+
+      .infographic-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .infographic-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .infographic-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .infographic-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-bottom: 3px solid #4caf50;
+      }
+
+      .infographic-content {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .infographic-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #333;
+        font-weight: 600;
+      }
+
+      .infographic-desc {
+        color: #666;
+        margin-bottom: 15px;
+        line-height: 1.6;
+        font-size: 14px;
+      }
+
+      .download-btn {
+        display: inline-block;
+        background: #4caf50;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: 40px;
+        transition: background 0.3s;
+      }
+
+      .download-btn:hover {
+        background: #3e8e41;
+      }
+
+      .download-btn i {
+        margin-right: 8px;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="status" class="la-ball-triangle-path">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!--End of Preloader-->
+
+    <div class="page-border" data-wow-duration="0.7s" data-wow-delay="0.2s">
+      <div
+        class="top-border wow fadeInDown animated"
+        style="visibility: visible; animation-name: fadeInDown"
+      ></div>
+      <div
+        class="right-border wow fadeInRight animated"
+        style="visibility: visible; animation-name: fadeInRight"
+      ></div>
+      <div
+        class="bottom-border wow fadeInUp animated"
+        style="visibility: visible; animation-name: fadeInUp"
+      ></div>
+      <div
+        class="left-border wow fadeInLeft animated"
+        style="visibility: visible; animation-name: fadeInLeft"
+      ></div>
+    </div>
+
+    <div id="wrapper">
+      <header id="banner" class="scrollto clearfix" data-enllax-ratio=".5">
+        <div id="header" class="nav-collapse">
+          <div class="row clearfix">
+            <div class="col-1">
+              <!--Logo-->
+              <div id="logo">
+                <img
+                  src="images/logo.png"
+                  id="banner-logo"
+                  alt="Landing Page"
+                />
+                <img
+                  src="images/logo-2.png"
+                  id="navigation-logo"
+                  alt="Landing Page"
+                />
+              </div>
+              <!--End of Logo-->
+
+              <aside>
+                <a href="login.php" class="admin">KELOLA DATA</a>
+              </aside>
+
+              <!--Main Navigation-->
+              <nav id="nav-main">
+                <ul>
+                  <li><a href="desacantiksinarmulyo/index.html">Beranda</a></li>
+                  <li>
+                    <a href="/desacantiksinarmulyo/data-desa.html">Data Desa</a>
+                  </li>
+                  <li>
+                    <a
+                      href="/desacantiksinarmulyo/Infografis.html"
+                      class="active"
+                      >Infografis</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/desacantiksinarmulyo/berita.html">Berita</a>
+                  </li>
+                  <li><a href="/desacantiksinarmulyo/Peta.html">Peta</a></li>
+                  <li>
+                    <a href="desacantiksinarmulyo/index.html#Buku"
+                      >Buku Statistik Desa</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+              <!--End of Main Navigation-->
+
+              <div id="nav-trigger"><span></span></div>
+              <nav id="nav-mobile"></nav>
+            </div>
+          </div>
+        </div>
+        <!--End of Header-->
+
+        <!--Banner Content-->
+        <div id="banner-content" class="row clearfix">
+          <div class="col-38">
+            <div class="section-heading" style="text-align: left">
+              <h3 style="color: white; font-size: 24px">Data Visual</h3>
+              <h1
+                style="
+                  color: white;
+                  margin-top: 0;
+                  font-size: 42px;
+                  font-weight: 700;
+                  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+                "
+              >
+                Infografis Desa Sinar Mulyo
+              </h1>
+            </div>
+          </div>
+        </div>
+        <!--End of Row-->
+      </header>
+
+      <!--Main Content Area-->
+      <main id="content">
+        <!-- Infographic Section -->
+        <section class="infographic-section">
+          <div class="text-center">
+            <h2 class="section-title wow fadeInUp">DESA DALAM GAMBAR</h2>
+            <p class="section-subtitle wow fadeInUp" data-wow-delay="0.2s">
+              Berbagai informasi desa divisualisasikan dalam bentuk infografis
+              yang menarik dan mudah dipahami untuk memberikan gambaran
+              menyeluruh tentang Desa Sinar Mulyo
+            </p>
+          </div>
+
+          <div class="infographic-grid">
+            <!-- Infographic Card 1 -->
+            <div class="infographic-card wow fadeInUp" data-wow-delay="0.2s">
+              <img
+                src="images/infografis/demografi.jpg"
+                alt="Struktur Penduduk"
+                class="infographic-image"
+              />
+              <div class="infographic-content">
+                <h3 class="infographic-title">Struktur Demografi Penduduk</h3>
+                <p class="infographic-desc">
+                  Visualisasi komposisi penduduk berdasarkan usia, jenis
+                  kelamin, dan status perkawinan
+                </p>
+              </div>
+            </div>
+
+            <!-- Infographic Card 2 -->
+            <div class="infographic-card wow fadeInUp" data-wow-delay="0.3s">
+              <img
+                src="images/infografis/pertanian.jpg"
+                alt="Produksi Pertanian"
+                class="infographic-image"
+              />
+              <div class="infographic-content">
+                <h3 class="infographic-title">Produksi Pertanian Tahunan</h3>
+                <p class="infographic-desc">
+                  Data hasil panen padi, jagung, dan komoditas utama lainnya
+                  selama 5 tahun terakhir
+                </p>
+              </div>
+            </div>
+
+            <!-- Infographic Card 3 -->
+            <div class="infographic-card wow fadeInUp" data-wow-delay="0.4s">
+              <img
+                src="images/infografis/ekonomi.jpg"
+                alt="Perekonomian Desa"
+                class="infographic-image"
+              />
+              <div class="infographic-content">
+                <h3 class="infographic-title">Struktur Perekonomian Desa</h3>
+                <p class="infographic-desc">
+                  Distribusi mata pencaharian penduduk dan kontribusi sektor
+                  ekonomi terhadap desa
+                </p>
+              </div>
+            </div>
+
+            <!-- Infographic Card 4 -->
+            <div class="infographic-card wow fadeInUp" data-wow-delay="0.5s">
+              <img
+                src="images/infografis/kesehatan.jpg"
+                alt="Indikator Kesehatan"
+                class="infographic-image"
+              />
+              <div class="infographic-content">
+                <h3 class="infographic-title">
+                  Indikator Kesehatan Masyarakat
+                </h3>
+                <p class="infographic-desc">
+                  Cakupan imunisasi, akses fasilitas kesehatan, dan kasus
+                  penyakit dominan
+                </p>
+              </div>
+            </div>
+
+            <!-- Infographic Card 5 -->
+            <div class="infographic-card wow fadeInUp" data-wow-delay="0.6s">
+              <img
+                src="images/infografis/pendidikan.jpg"
+                alt="Tingkat Pendidikan"
+                class="infographic-image"
+              />
+              <div class="infographic-content">
+                <h3 class="infographic-title">Tingkat Pendidikan Masyarakat</h3>
+                <p class="infographic-desc">
+                  Distribusi tingkat pendidikan penduduk dan fasilitas
+                  pendidikan yang tersedia
+                </p>
+              </div>
+            </div>
+
+            <!-- Infographic Card 6 -->
+            <div class="infographic-card wow fadeInUp" data-wow-delay="0.7s">
+              <img
+                src="images/infografis/infrastruktur.jpg"
+                alt="Infrastruktur Desa"
+                class="infographic-image"
+              />
+              <div class="infographic-content">
+                <h3 class="infographic-title">
+                  Perkembangan Infrastruktur Desa
+                </h3>
+                <p class="infographic-desc">
+                  Kemajuan pembangunan jalan, jembatan, dan fasilitas umum dalam
+                  10 tahun terakhir
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <a href="#" class="download-btn wow fadeInUp" data-wow-delay="0.8s">
+              <i class="fa fa-download"></i> Download Infografis Lengkap
+            </a>
+          </div>
+        </section>
+        <!-- End Infographic Section -->
+      </main>
+      <!--End Main Content Area-->
+
+      <!--Footer-->
+      <footer id="landing-footer" class="clearfix">
+        <div class="row clearfix">
+          <p id="copyright" class="col-2">
+            Made with love by
+            <a href="https://okuselatankab.bps.go.id/id">Tengku</a>
+          </p>
+
+          <!--Social Icons in Footer-->
+          <ul class="col-2 social-icons">
+            <li>
+              <a
+                target="_blank"
+                title="Facebook"
+                href="https://www.facebook.com/username"
+              >
+                <i class="fa fa-facebook fa-1x"></i><span>Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                title="Instagram"
+                href="http://www.instagram.com/username"
+              >
+                <i class="fa fa-instagram fa-1x"></i><span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                title="YouTube"
+                href="http://www.youtube.com/username"
+              >
+                <i class="fa fa-youtube fa-1x"></i><span>YouTube</span>
+              </a>
+            </li>
+          </ul>
+          <!--End of Social Icons in Footer-->
+        </div>
+      </footer>
+      <!--End of Footer-->
+    </div>
+
+    <!-- Include JavaScript resources -->
+    <script src="js/jquery.1.8.3.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/featherlight.min.js"></script>
+    <script src="js/featherlight.gallery.min.js"></script>
+    <script src="js/jquery.enllax.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.stickyNavbar.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/images-loaded.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script src="js/site.js"></script>
+  </body>
+</html>

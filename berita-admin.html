@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Panel - Desa Sinar Mulyo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/logo.ico" title="Favicon" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800"
+      rel="stylesheet"
+    />
+    <style>
+      /* Admin Panel Styles */
+      body {
+        font-family: "Open Sans", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        color: #333;
+      }
+
+      .admin-container {
+        display: flex;
+        min-height: 100vh;
+      }
+
+      .sidebar {
+        width: 250px;
+        background: #2989d8;
+        color: white;
+        padding: 20px 0;
+      }
+
+      .sidebar-header {
+        padding: 0 20px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .sidebar-header img {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .sidebar-menu {
+        padding: 20px 0;
+      }
+
+      .sidebar-menu a {
+        display: block;
+        padding: 12px 20px;
+        color: white;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+
+      .sidebar-menu a:hover,
+      .sidebar-menu a.active {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .sidebar-menu i {
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+      }
+
+      .main-content {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .page-title {
+        font-size: 24px;
+        color: #333;
+      }
+
+      .user-info {
+        display: flex;
+        align-items: center;
+      }
+
+      .user-info img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .card-title {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #2989d8;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background 0.3s;
+      }
+
+      .btn-primary {
+        background: #2989d8;
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: #1e5799;
+      }
+
+      .btn-danger {
+        background: #e74c3c;
+        color: white;
+      }
+
+      .btn-danger:hover {
+        background: #c0392b;
+      }
+
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .table th,
+      .table td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .table th {
+        background: #f5f5f5;
+        font-weight: 600;
+      }
+
+      .table tr:hover {
+        background: #f9f9f9;
+      }
+
+      .action-buttons a {
+        margin-right: 10px;
+        color: #2989d8;
+        text-decoration: none;
+      }
+
+      .action-buttons a:hover {
+        text-decoration: underline;
+      }
+
+      .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+      }
+
+      .alert-success {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+
+      .image-preview {
+        max-width: 200px;
+        max-height: 150px;
+        margin-top: 10px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="admin-container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <img src="images/logo-2.png" alt="Desa Sinar Mulyo" />
+        </div>
+        <div class="sidebar-menu">
+          <a href="admin.html"><i class="fa fa-tachometer"></i> Dashboard</a>
+          <a href="admin-berita.html" class="active"
+            ><i class="fa fa-newspaper-o"></i> Kelola Berita</a
+          >
+          <a href="admin-data.html"
+            ><i class="fa fa-database"></i> Kelola Data</a
+          >
+          <a href="admin-infografis.html"
+            ><i class="fa fa-bar-chart"></i> Kelola Infografis</a
+          >
+          <a href="admin-pengguna.html"
+            ><i class="fa fa-users"></i> Kelola Pengguna</a
+          >
+          <a href="index.html"
+            ><i class="fa fa-sign-out"></i> Kembali ke Website</a
+          >
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="header">
+          <h1 class="page-title">
+            <i class="fa fa-newspaper-o"></i> Kelola Berita
+          </h1>
+          <div class="user-info">
+            <img src="images/user-avatar.jpg" alt="Admin" />
+            <span>Administrator</span>
+          </div>
+        </div>
+
+        <!-- Success Message -->
+        <div class="alert alert-success">Artikel berhasil diperbarui!</div>
+
+        <!-- Add/Edit Article Form -->
+        <div class="card">
+          <h2 class="card-title">Tambah Artikel Baru</h2>
+          <form id="article-form">
+            <div class="form-group">
+              <label for="article-title">Judul Artikel</label>
+              <input
+                type="text"
+                id="article-title"
+                class="form-control"
+                placeholder="Masukkan judul artikel"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="article-date">Tanggal</label>
+              <input type="date" id="article-date" class="form-control" />
+            </div>
+
+            <div class="form-group">
+              <label for="article-image">Gambar Utama</label>
+              <input type="file" id="article-image" class="form-control" />
+              <img
+                id="image-preview"
+                class="image-preview"
+                src="#"
+                alt="Preview Gambar"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="article-content">Isi Artikel</label>
+              <textarea
+                id="article-content"
+                class="form-control"
+                placeholder="Tulis isi artikel disini..."
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Kategori</label>
+              <div>
+                <label style="display: inline-block; margin-right: 15px">
+                  <input type="checkbox" name="category" value="Pertanian" />
+                  Pertanian
+                </label>
+                <label style="display: inline-block; margin-right: 15px">
+                  <input type="checkbox" name="category" value="Pembangunan" />
+                  Pembangunan
+                </label>
+                <label style="display: inline-block; margin-right: 15px">
+                  <input type="checkbox" name="category" value="Event" /> Event
+                </label>
+                <label style="display: inline-block; margin-right: 15px">
+                  <input type="checkbox" name="category" value="Prestasi" />
+                  Prestasi
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">
+                <i class="fa fa-save"></i> Simpan Artikel
+              </button>
+              <button type="button" class="btn btn-danger">
+                <i class="fa fa-times"></i> Batal
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Article List -->
+        <div class="card">
+          <h2 class="card-title">Daftar Artikel</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Judul</th>
+                <th>Tanggal</th>
+                <th>Kategori</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Panen Raya Padi Desa Sinar Mulyo Capai 7 Ton per Hektar</td>
+                <td>15 Jun 2023</td>
+                <td>Pertanian, Pembangunan</td>
+                <td class="action-buttons">
+                  <a href="#"><i class="fa fa-edit"></i> Edit</a>
+                  <a href="#"><i class="fa fa-trash"></i> Hapus</a>
+                  <a href="#"><i class="fa fa-eye"></i> Lihat</a>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Pelatihan Pertanian Organik bagi Kelompok Tani Desa</td>
+                <td>10 Jun 2023</td>
+                <td>Pertanian, Pelatihan</td>
+                <td class="action-buttons">
+                  <a href="#"><i class="fa fa-edit"></i> Edit</a>
+                  <a href="#"><i class="fa fa-trash"></i> Hapus</a>
+                  <a href="#"><i class="fa fa-eye"></i> Lihat</a>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Pembangunan Jalan Usaha Tani Tahap II Dimulai</td>
+                <td>05 Jun 2023</td>
+                <td>Infrastruktur, Pembangunan</td>
+                <td class="action-buttons">
+                  <a href="#"><i class="fa fa-edit"></i> Edit</a>
+                  <a href="#"><i class="fa fa-trash"></i> Hapus</a>
+                  <a href="#"><i class="fa fa-eye"></i> Lihat</a>
+                </td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Festival Hasil Bumi Desa Sinar Mulyo Sukses Digelar</td>
+                <td>20 Mei 2023</td>
+                <td>Event, Ekonomi</td>
+                <td class="action-buttons">
+                  <a href="#"><i class="fa fa-edit"></i> Edit</a>
+                  <a href="#"><i class="fa fa-trash"></i> Hapus</a>
+                  <a href="#"><i class="fa fa-eye"></i> Lihat</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Image preview functionality
+      document
+        .getElementById("article-image")
+        .addEventListener("change", function (e) {
+          const preview = document.getElementById("image-preview");
+          const file = e.target.files[0];
+          const reader = new FileReader();
+
+          reader.onload = function (e) {
+            preview.src = e.target.result;
+            preview.style.display = "block";
+          };
+
+          if (file) {
+            reader.readAsDataURL(file);
+          }
+        });
+
+      // Form submission
+      document
+        .getElementById("article-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Artikel berhasil disimpan!");
+          // Here you would typically send the data to the server
+        });
+    </script>
+  </body>
+</html>

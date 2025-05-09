@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title>Detail Berita - Desa Sinar Mulyo</title>
+    <meta name="keywords" content="berita desa, sinar mulyo, oku selatan" />
+    <meta name="description" content="Detail berita dari Desa Sinar Mulyo" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/logo.ico" title="Favicon" />
+
+    <!-- Main CSS Files -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/namari-color.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+
+    <!-- Google Webfonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <style>
+      /* News Detail Section Styling */
+      .news-detail-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      .news-detail-header {
+        margin-bottom: 30px;
+      }
+
+      .news-detail-date {
+        color: #4caf50;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .news-detail-title {
+        color: #333;
+        font-size: 28px;
+        margin-bottom: 15px;
+        line-height: 1.3;
+      }
+
+      .news-detail-meta {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .news-detail-category {
+        display: inline-block;
+        background: #f5f5f5;
+        color: #666;
+        padding: 3px 10px;
+        border-radius: 3px;
+        font-size: 12px;
+        margin-right: 8px;
+      }
+
+      .news-detail-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 25px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .news-detail-content {
+        line-height: 1.8;
+        color: #444;
+      }
+
+      .news-detail-content p {
+        margin-bottom: 20px;
+      }
+
+      .news-detail-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin: 20px 0;
+      }
+
+      .news-detail-footer {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+      }
+
+      .share-buttons {
+        margin-top: 20px;
+      }
+
+      .share-buttons a {
+        display: inline-block;
+        margin-right: 10px;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .share-facebook {
+        background-color: #3b5998;
+      }
+      .share-twitter {
+        background-color: #1da1f2;
+      }
+      .share-whatsapp {
+        background-color: #25d366;
+      }
+
+      .related-news {
+        margin-top: 50px;
+      }
+
+      .related-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+        color: #333;
+        border-bottom: 2px solid #4caf50;
+        padding-bottom: 10px;
+      }
+
+      .related-news-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .related-news-item {
+        border: 1px solid #eee;
+        border-radius: 5px;
+        overflow: hidden;
+        transition: transform 0.3s;
+      }
+
+      .related-news-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .related-news-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .related-news-content {
+        padding: 15px;
+      }
+
+      .related-news-date {
+        font-size: 12px;
+        color: #4caf50;
+        margin-bottom: 8px;
+      }
+
+      .related-news-title {
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+
+      .related-news-title a {
+        color: #333;
+        text-decoration: none;
+      }
+
+      .back-button {
+        display: inline-block;
+        margin-bottom: 30px;
+        color: #4caf50;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .back-button:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .news-detail-image {
+          height: 250px;
+        }
+
+        .news-detail-title {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="status" class="la-ball-triangle-path">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!--End of Preloader-->
+
+    <div class="page-border" data-wow-duration="0.7s" data-wow-delay="0.2s">
+      <div class="top-border wow fadeInDown animated"></div>
+      <div class="right-border wow fadeInRight animated"></div>
+      <div class="bottom-border wow fadeInUp animated"></div>
+      <div class="left-border wow fadeInLeft animated"></div>
+    </div>
+
+    <div id="wrapper">
+      <header id="banner" class="scrollto clearfix" data-enllax-ratio=".5">
+        <div id="header" class="nav-collapse">
+          <div class="row clearfix">
+            <div class="col-1">
+              <!--Logo-->
+              <div id="logo">
+                <img
+                  src="images/logo.png"
+                  id="banner-logo"
+                  alt="Landing Page"
+                />
+                <img
+                  src="images/logo-2.png"
+                  id="navigation-logo"
+                  alt="Landing Page"
+                />
+              </div>
+              <!--End of Logo-->
+
+              <aside>
+                <a href="login.php" class="admin">KELOLA DATA</a>
+              </aside>
+
+              <!--Main Navigation-->
+              <nav id="nav-main">
+                <ul>
+                  <li><a href="index.html">Beranda</a></li>
+                  <li><a href="data-desa.html">Data Desa</a></li>
+                  <li><a href="Infografis.html">Infografis</a></li>
+                  <li><a href="berita.html">Berita</a></li>
+                  <li><a href="Peta.html">Peta</a></li>
+                  <li><a href="#Buku">Buku Statistik Desa</a></li>
+                </ul>
+              </nav>
+              <!--End of Main Navigation-->
+
+              <div id="nav-trigger"><span></span></div>
+              <nav id="nav-mobile"></nav>
+            </div>
+          </div>
+        </div>
+        <!--End of Header-->
+      </header>
+
+      <!--Main Content Area-->
+      <main id="content">
+        <!-- News Detail Section -->
+        <section class="news-detail-container">
+          <a href="berita.html" class="back-button wow fadeInUp">
+            <i class="fa fa-arrow-left"></i> Kembali ke Berita
+          </a>
+
+          <div class="news-detail-header wow fadeInUp" data-wow-delay="0.1s">
+            <div class="news-detail-date">15 JUNI 2023</div>
+            <h1 class="news-detail-title">
+              Panen Raya Padi Desa Sinar Mulyo Capai 7 Ton per Hektar
+            </h1>
+            <div class="news-detail-meta">
+              <span class="news-detail-category">Pertanian</span>
+              <span class="news-detail-category">Pembangunan</span>
+            </div>
+          </div>
+
+          <img
+            src="images/panen-padi.jpg"
+            alt="Panen Padi"
+            class="news-detail-image wow fadeInUp"
+            data-wow-delay="0.2s"
+          />
+
+          <div class="news-detail-content wow fadeInUp" data-wow-delay="0.3s">
+            <p>
+              <strong>Desa Sinar Mulyo</strong> - Desa Sinar Mulyo kembali
+              mencatat hasil panen padi yang melimpah dengan produktivitas
+              mencapai 7 ton per hektar pada musim panen kali ini. Peningkatan
+              hasil panen ini merupakan yang tertinggi dalam lima tahun
+              terakhir.
+            </p>
+
+            <p>
+              Kepala Desa Sinar Mulyo, Bapak Sunyono, menyatakan bahwa
+              pencapaian ini tidak lepas dari dukungan berbagai pihak dan kerja
+              keras para petani. "Kami bersyukur atas hasil panen yang melimpah
+              ini. Ini adalah bukti bahwa program intensifikasi pertanian yang
+              kami lakukan bersama Dinas Pertanian Kabupaten membuahkan hasil,"
+              ujarnya.
+            </p>
+
+            <img
+              src="images/petani-bekerja.jpg"
+              alt="Petani Bekerja"
+              class="wow fadeInUp"
+              data-wow-delay="0.4s"
+            />
+
+            <h3>Penerapan Teknologi Modern</h3>
+            <p>
+              Peningkatan produktivitas ini disebabkan oleh penerapan teknologi
+              pertanian modern dan program pendampingan dari Dinas Pertanian
+              Kabupaten. Beberapa inovasi yang diterapkan antara lain:
+            </p>
+            <ul>
+              <li>Penggunaan bibit unggul baru yang lebih tahan hama</li>
+              <li>Sistem pengairan yang lebih efisien</li>
+              <li>Pemupukan berimbang berdasarkan analisis tanah</li>
+              <li>Pengendalian hama terpadu</li>
+            </ul>
+
+            <p>
+              Bapak Ahmad, salah satu petani di Desa Sinar Mulyo, mengaku sangat
+              terbantu dengan program pendampingan ini. "Dulu kami hanya bisa
+              panen 5 ton per hektar, sekarang bisa mencapai 7 ton. Ini sangat
+              membantu ekonomi keluarga kami," tuturnya.
+            </p>
+
+            <h3>Dukungan Pemerintah Daerah</h3>
+            <p>
+              Dinas Pertanian Kabupaten OKU Selatan melalui Kepala Bidang
+              Tanaman Pangan, Ibu Dewi Sartika, menyampaikan apresiasinya atas
+              pencapaian ini. "Desa Sinar Mulyo menjadi contoh yang baik
+              bagaimana kolaborasi antara petani, penyuluh, dan pemerintah bisa
+              meningkatkan produktivitas pertanian," ujarnya.
+            </p>
+
+            <p>
+              Pemerintah Kabupaten berkomitmen untuk terus mendukung
+              pengembangan pertanian di Desa Sinar Mulyo melalui berbagai
+              program, termasuk:
+            </p>
+            <ol>
+              <li>Penyediaan sarana dan prasarana pertanian</li>
+              <li>Pelatihan teknis bagi petani</li>
+              <li>Pendampingan intensif oleh penyuluh pertanian</li>
+              <li>Pengembangan pemasaran hasil pertanian</li>
+            </ol>
+
+            <img
+              src="images/panen-sukses.jpg"
+              alt="Panen Sukses"
+              class="wow fadeInUp"
+              data-wow-delay="0.5s"
+            />
+
+            <h3>Dampak bagi Masyarakat</h3>
+            <p>
+              Peningkatan hasil panen ini memberikan dampak positif bagi
+              perekonomian masyarakat Desa Sinar Mulyo. Beberapa dampak yang
+              dirasakan antara lain:
+            </p>
+            <ul>
+              <li>Peningkatan pendapatan petani</li>
+              <li>Penyerapan tenaga kerja selama musim panen</li>
+              <li>Stabilitas harga beras di tingkat lokal</li>
+              <li>Peningkatan kesejahteraan masyarakat desa</li>
+            </ul>
+
+            <p>
+              Kegiatan panen raya ini dihadiri oleh perwakilan dari Dinas
+              Pertanian Kabupaten, penyuluh pertanian, serta masyarakat desa.
+              Acara ditutup dengan pembagian bibit unggul untuk musim tanam
+              berikutnya sebagai bentuk dukungan berkelanjutan.
+            </p>
+          </div>
+
+          <div class="news-detail-footer wow fadeInUp" data-wow-delay="0.6s">
+            <div class="share-buttons">
+              <span>Bagikan:</span>
+              <a href="#" class="share-facebook"
+                ><i class="fa fa-facebook"></i> Facebook</a
+              >
+              <a href="#" class="share-twitter"
+                ><i class="fa fa-twitter"></i> Twitter</a
+              >
+              <a href="#" class="share-whatsapp"
+                ><i class="fa fa-whatsapp"></i> WhatsApp</a
+              >
+            </div>
+          </div>
+
+          <div class="related-news wow fadeInUp" data-wow-delay="0.7s">
+            <h3 class="related-title">Berita Terkait</h3>
+            <div class="related-news-list">
+              <div class="related-news-item">
+                <img
+                  src="images/pelatihan-pertanian.jpg"
+                  alt="Pelatihan Pertanian"
+                  class="related-news-image"
+                />
+                <div class="related-news-content">
+                  <div class="related-news-date">10 JUNI 2023</div>
+                  <h4 class="related-news-title">
+                    <a href="berita-detail.html"
+                      >Pelatihan Pertanian Organik bagi Kelompok Tani Desa</a
+                    >
+                  </h4>
+                </div>
+              </div>
+
+              <div class="related-news-item">
+                <img
+                  src="images/pembangunan-jalan.jpg"
+                  alt="Pembangunan Jalan"
+                  class="related-news-image"
+                />
+                <div class="related-news-content">
+                  <div class="related-news-date">5 JUNI 2023</div>
+                  <h4 class="related-news-title">
+                    <a href="berita-detail.html"
+                      >Pembangunan Jalan Usaha Tani Tahap II Dimulai</a
+                    >
+                  </h4>
+                </div>
+              </div>
+
+              <div class="related-news-item">
+                <img
+                  src="images/festival-hasil-bumi.jpg"
+                  alt="Festival Hasil Bumi"
+                  class="related-news-image"
+                />
+                <div class="related-news-content">
+                  <div class="related-news-date">20 MEI 2023</div>
+                  <h4 class="related-news-title">
+                    <a href="berita-detail.html"
+                      >Festival Hasil Bumi Desa Sinar Mulyo Sukses Digelar</a
+                    >
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End News Detail Section -->
+      </main>
+      <!--End Main Content Area-->
+
+      <!--Footer-->
+      <footer id="landing-footer" class="clearfix">
+        <div class="row clearfix">
+          <p id="copyright" class="col-2">
+            Made with love by
+            <a href="https://okuselatankab.bps.go.id/id">Tengku</a>
+          </p>
+
+          <!--Social Icons in Footer-->
+          <ul class="col-2 social-icons">
+            <li>
+              <a
+                target="_blank"
+                title="Facebook"
+                href="https://www.facebook.com/username"
+              >
+                <i class="fa fa-facebook fa-1x"></i><span>Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                title="Instagram"
+                href="http://www.instagram.com/username"
+              >
+                <i class="fa fa-instagram fa-1x"></i><span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                title="YouTube"
+                href="http://www.youtube.com/username"
+              >
+                <i class="fa fa-youtube fa-1x"></i><span>YouTube</span>
+              </a>
+            </li>
+          </ul>
+          <!--End of Social Icons in Footer-->
+        </div>
+      </footer>
+      <!--End of Footer-->
+    </div>
+
+    <!-- Include JavaScript resources -->
+    <script src="js/jquery.1.8.3.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/featherlight.min.js"></script>
+    <script src="js/featherlight.gallery.min.js"></script>
+    <script src="js/jquery.enllax.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.stickyNavbar.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/images-loaded.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script src="js/site.js"></script>
+  </body>
+</html>
