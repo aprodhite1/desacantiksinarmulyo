@@ -67,8 +67,8 @@ mysqli_data_seek($result, 0);
     }
 
     .sidebar {
-        background: #2989d8;
-        color: white;
+        background: rgb(245, 245, 245);
+        color: black;
         padding: 20px;
         width: 250px;
         border-radius: 8px;
@@ -93,8 +93,27 @@ mysqli_data_seek($result, 0);
         align-items: center;
     }
 
+    .menu-box-log-out {
+        background: rgb(190, 36, 52);
+        padding: 12px 15px;
+        margin: 8px 0;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-box-log-out i {
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+    }
+
     .menu-box:hover {
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(80, 69, 69, 0.2);
         transform: translateX(5px);
     }
 
@@ -294,21 +313,19 @@ if(isset($_GET['pesan'])) {
             <i class="fa fa-users"></i> Kelola Pengguna
         </div>
 
-        <div class="menu-box" onclick="window.location.href='logout.php'">
+        <div class="menu-box-log-out" onclick="window.location.href='logout.php'">
             <i class="fa fa-sign-out"></i> Logout
         </div>
     </div>
 
     <div class="main-content">
+
         <div class="header">
             <h2>Daftar SLS Desa <?php echo htmlspecialchars($nama ?? ''); ?> (Tahun <?php echo $tahun; ?>)</h2>
             <div>
                 <a href="entri.php?tahun=<?php echo $tahun; ?>" class="add-btn">Tambah Data Baru</a>
                 <a href="#importModal" rel="modal:open" class="import-btn">Import Excel</a>
-                <div class="logout-btn">
-                    <a href="logout.php"
-                        style="color: white; background-color: #dc3545; padding: 8px 15px; border-radius: 4px; text-decoration: none;">Logout</a>
-                </div>
+
             </div>
         </div>
         <div id="importModal" class="modal">

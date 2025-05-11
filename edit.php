@@ -10,7 +10,7 @@ include_once("koneksi.php");
 
 // Get year parameter and validate
 $tahun = isset($_GET['tahun']) ? intval($_GET['tahun']) : 2025;
-$allowed_years = [2023, 2024, 2025];
+$allowed_years = [2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030];
 if(!in_array($tahun, $allowed_years)) {
     $tahun = 2025; // Default to 2025 if invalid year
 }

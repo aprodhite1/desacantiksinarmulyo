@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$database = "u890967115_descan";
+$database = "descan";
 $username = "root";
 $password = "";
  
